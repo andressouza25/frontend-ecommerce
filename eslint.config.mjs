@@ -6,7 +6,7 @@ import pluginReact, { rules } from 'eslint-plugin-react'
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    rules: { 'react/react-in-jsx-scope': 'off' }
+    rules: { 'react/react-in-jsx-scope': 'off', 'no-use-befor-define': 'off' }
   },
 
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
