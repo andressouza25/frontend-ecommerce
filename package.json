@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "husky:prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,8 @@
     "eslint": "^9.8.0",
     "eslint-plugin-react": "^7.35.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
     "prettier-config-standard": "^7.0.0",
     "typescript-eslint": "^8.0.1"
   }
