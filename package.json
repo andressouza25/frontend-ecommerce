@@ -19,6 +19,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.12",
     "typescript": "^4.4.2",
+    "validator": "^13.12.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -55,5 +56,9 @@
     "lint-staged": "^15.2.8",
     "prettier-config-standard": "^7.0.0",
     "typescript-eslint": "^8.0.1"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/andressouza25/frontend-ecommerce.git",
+  "author": "Andre <andressouza25@gmail.com>",
+  "license": "MIT"
 }

@@ -1,7 +1,7 @@
 import { BsGoogle } from 'react-icons/bs'
 import { FiLogIn } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
-import validator from 'validator'
+import { isEmail } from 'validator'
 
 // Components
 import CustomButton from '../../components/custom-button/custom-button.component'
@@ -50,7 +50,7 @@ const LoginPage = () => {
               {...register('email', {
                 required: true,
                 validate: (value) => {
-                  return validator.isEmail(value)
+                  return isEmail(value)
                 }
               })}
             />
@@ -58,7 +58,7 @@ const LoginPage = () => {
               <InputErrorMessage> O e-mail é obrigatório</InputErrorMessage>
             )}
 
-            {errors?.email.type === 'validate' && (
+            {errors?.email?.type === 'validate' && (
               <InputErrorMessage>
                 Por favor, insira um e-mail válido.
               </InputErrorMessage>
