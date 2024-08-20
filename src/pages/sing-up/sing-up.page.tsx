@@ -55,7 +55,9 @@ const SingUpPage = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    navigate('/')
+    if (isAuthenticated) {
+      navigate('/')
+    }
   }, [isAuthenticated])
 
   const handleSubmitPress = async (data: SingUpForm) => {
