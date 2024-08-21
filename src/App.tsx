@@ -11,7 +11,9 @@ import SingUpPage from './pages/sing-up/sing-up.page'
 // Utilities
 import { auth, db } from './config/firebase.config'
 import { UserContext } from './contexts/user.context'
-import { userConverter } from './components/converters/firestore.converters'
+import { userConverter } from './converters/firestore.converters'
+
+// Components
 import Loading from './components/loading/loading.component'
 
 const App: FunctionComponent = () => {
