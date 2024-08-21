@@ -6,6 +6,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore'
 // Pages
 import HomePage from './pages/home/home.page'
 import LoginPage from './pages/login/login.page'
+import CategoryDetailsPage from './pages/category-details/category-details.page'
 import SingUpPage from './pages/sing-up/sing-up.page'
 import ExplorePage from './pages/explore/explore.page'
 
@@ -52,6 +53,7 @@ const App: FunctionComponent = () => {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/explore' element={<ExplorePage />} />
+        <Route path='/category/:id' element={<CategoryDetailsPage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/sign-up' element={<SingUpPage />} />
       </Routes>
