@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Colors from '../../theme/theme.colors'
+import Colors from '../../theme/theme.color'
 
 interface CartItemImageProps {
   imageUrl: string

@@ -25,12 +25,15 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({ product }) => {
   const handleAddToCartClick = () => {
     addProductToCart(product)
   }
+
   return (
     <ProductContainer>
-      <ProductImage imageUrl={product.imageUrl} />
-      <CustomButton startIcon={<BsCartPlus />} onClick={handleAddToCartClick}>
-        Adicionar ao carrinho
-      </CustomButton>
+      <ProductImage imageUrl={product.imageUrl}>
+        <CustomButton startIcon={<BsCartPlus />} onClick={handleAddToCartClick}>
+          Adicionar ao carrinho
+        </CustomButton>
+      </ProductImage>
+
       <ProductInfo>
         <p>{product.name}</p>
         <p>R${product.price}</p>

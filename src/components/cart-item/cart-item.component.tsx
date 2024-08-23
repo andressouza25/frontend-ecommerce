@@ -15,11 +15,10 @@ interface CartItemProps {
   product: CartProduct
 }
 
-const CartItem: FunctionComponent<CartItemProps> = () => {
+const CartItem: FunctionComponent<CartItemProps> = ({ product }) => {
   return (
     <CartItemContainer>
       <CartItemImage imageUrl={product.imageUrl} />
-
       <CartItemInfo>
         <p>{product.name}</p>
         <p>R${product.price}</p>
@@ -30,7 +29,6 @@ const CartItem: FunctionComponent<CartItemProps> = () => {
           <AiOutlinePlus size={20} />
         </CartItemQuantity>
       </CartItemInfo>
-
       <RemoveButton>
         <AiOutlineClose size={25} />
       </RemoveButton>
