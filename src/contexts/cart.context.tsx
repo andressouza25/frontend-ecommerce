@@ -11,7 +11,7 @@ interface IchildrenProps {
   children: React.ReactNode
 }
 
-const CartContext = createContext<ICartContext>({
+export const CartContext = createContext<ICartContext>({
   isVisible: false,
   products: [],
   toggleCart: () => {}

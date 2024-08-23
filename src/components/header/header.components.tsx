@@ -14,11 +14,14 @@ import {
   HeaderTitle
 } from './header.styles'
 import { signOut } from 'firebase/auth'
+import { CartContext } from '../../contexts/cart.context'
 
 const Header = () => {
   const navigate = useNavigate()
 
   const { isAuthenticated } = useContext(UserContext)
+
+  const { toggleCart } = useContext(CartContext)
 
   const handleLoginClick = () => {
     navigate('/login')
@@ -48,7 +51,7 @@ const Header = () => {
         {isAuthenticated && (
           <HeaderItem onClick={() => signOut(auth)}>Sair</HeaderItem>
         )}
-        <HeaderItem>
+        <HeaderItem onClick={toggleCart}>
           <BsCart3 size={25} />
           <p style={{ marginLeft: 5 }}>5</p>
         </HeaderItem>
