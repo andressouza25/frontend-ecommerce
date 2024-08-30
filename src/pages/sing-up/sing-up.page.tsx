@@ -9,7 +9,6 @@ import {
 import { addDoc, collection } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 
 // Components
 import CustomButton from '../../components/custom-button/custom-button.component'
@@ -27,6 +26,7 @@ import {
 } from './sing-up.styles'
 
 // Utilities
+import { useAppSelector } from '../../hooks/redux.hooks'
 import { auth, db } from '../../config/firebase.config'
 
 interface SingUpForm {
@@ -50,8 +50,8 @@ const SingUpPage = () => {
 
   const watchPassword = watch('password')
 
-  const { isAuthenticated } = useSelector(
-    (rootReducer: any) => rootReducer.userReducer
+  const { isAuthenticated } = useAppSelector(
+    (rootReducer) => rootReducer.userReducer
   )
   const navigate = useNavigate()
 
