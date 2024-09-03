@@ -13,11 +13,11 @@ const initialState: InitialState = {
 
 const cartReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    // # Abre o carrinho #
+    // CASE 1 - Abre o carrinho
     case CartActionTypes.toggleCart:
       return { ...state, isVisible: !state.isVisible }
 
-    // # Adicionando um item no carrinho #
+    // CASE 2 - Adicionando um item no carrinho
     case CartActionTypes.addProductToCart: {
       const product = action.payload
 
@@ -44,6 +44,42 @@ const cartReducer = (state = initialState, action: any) => {
         products: [...state.products, { ...product, quantity: 1 }]
       }
     }
+    // CASE 3 - Remover produto do carrinho
+    case CartActionTypes.removeProductFromCart:
+      return {
+        ...state,
+        products: state.products.filter(
+          (product) => product.id !== action.payload
+        )
+      }
+    // CASE 4 - Adicionar produtos no carrinho
+    case CartActionTypes.increaseCartProductQuantity:
+      return {
+        ...state,
+        products: state.products.map((product) =>
+          product.id === action.payload
+            ? { ...product, quantity: product.quantity + 1 }
+            : product
+        )
+      }
+    // CASE 5 - Diminuir produtos do carrinho
+    case CartActionTypes.decreaseCartProductQuantity:
+      return {
+        ...state,
+        products: state.products
+          .map((product) =>
+            product.id === action.payload
+              ? { ...product, quantity: product.quantity - 1 }
+              : product
+          )
+          .filter((product) => product.quantity > 0)
+      }
+    // CASE 6 - Limpar o carrinho
+    case CartActionTypes.clearCartProducts:
+      return {
+        ...state,
+        products: []
+      }
 
     default:
       return { ...state }
