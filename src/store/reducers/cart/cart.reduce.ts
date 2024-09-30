@@ -80,7 +80,7 @@ const cartReducer = (state = initialState, action: any) => {
         ...state,
         products: []
       }
-
+    // DEFAULT - Retornará todos os items ja existentes no carrinho
     default:
       return state
   }

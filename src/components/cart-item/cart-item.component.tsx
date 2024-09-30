@@ -6,9 +6,9 @@ import { useDispatch } from 'react-redux'
 import CartProduct from '../../types/cart.types'
 import {
   decreaseCartProductQuantity,
-  increaseCarProductQuantity,
+  increaseCartProductQuantity,
   removeProductFromCart
-} from '../../store/reducers/cart/cart.actions'
+} from '../../store/toolkit/cart/cart.slice'
 
 // Styles
 import {
@@ -31,7 +31,7 @@ const CartItem: FunctionComponent<CartItemProps> = ({ product }) => {
   }
 
   const handleIncreaseClick = () => {
-    dispatch(increaseCarProductQuantity(product.id))
+    dispatch(increaseCartProductQuantity(product.id))
   }
 
   const handleDecreaseClick = () => {
