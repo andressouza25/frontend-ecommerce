@@ -24,6 +24,9 @@ export const SignUpContent = styled.div`
   flex-direction: column;
   align-items: center;
   width: 450px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `
 
 export const SignUpInputContainer = styled.div`
