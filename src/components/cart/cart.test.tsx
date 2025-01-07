@@ -59,6 +59,7 @@ describe('Cart', () => {
 
     userEvent.click(increseButton)
     getByText('11')
+    getByText('Total: R$1100')
   })
 
   it('should decrease product quantity on decrease click', () => {
@@ -82,6 +83,7 @@ describe('Cart', () => {
 
     userEvent.click(decreaseButton)
     getByText('9')
+    getByText('Total: R$900')
   })
 
   it('should remove product on remoce click', () => {
