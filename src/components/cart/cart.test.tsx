@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event'
 import { renderWithRedux } from '../../helpers/test.helpers'
 import Cart from './cart.component'
 
@@ -35,5 +36,28 @@ describe('Cart', () => {
 
     getByText(/seu carrinho está vazio!/i)
     expect(queryByText(/ir para o checkout/i)).toBeNull()
+  })
+
+  it('should increase product quantity on increase click', () => {
+    const { getByLabelText, getByText } = renderWithRedux(<Cart />, {
+      preloadedState: {
+        cartReducer: {
+          products: [
+            {
+              id: '1',
+              imageUrl: 'image_url',
+              name: 'Boné',
+              price: 100,
+              quantity: 10
+            }
+          ]
+        }
+      } as any
+    })
+
+    const increseButton = getByLabelText(/increase quantity of boné/i)
+
+    userEvent.click(increseButton)
+    getByText('11')
   })
 })
