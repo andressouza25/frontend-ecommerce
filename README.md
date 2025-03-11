@@ -55,23 +55,37 @@ Stripe API - Processamento de pagamentos online</br>
 
 BACKEND
 </br>
-Navegue até a pasta do backend:</br>
-***cd backend</br>***
-Instale as dependências:</br>
-***npm install</br>***
-Configure as variáveis de ambiente (.env):</br>
-***FRONT_END_URL=http://localhost:3000</br>***
-***STRIPE_SECRET_API_KEY=sua_chave_do_stripe</br>***
+Navegue até a pasta do backend:
+```
+cd backend
+```
+Instale as dependências:
+```
+npm install
+```
+Configure as variáveis de ambiente (.env):
+```
+FRONT_END_URL=http://localhost:3000
+STRIPE_SECRET_API_KEY=sua_chave_do_stripe
+```
 Execute o backend:</br>
-***node app.js***
-</br></br>
+```
+node app.js
+```
+
 FRONTEND</br>
-Navegue até a pasta do frontend:</br>
-***cd frontend</br>***
-Instale as dependências:</br>
-***yarn install</br>***
-Inicie o servidor de desenvolvimento:</br>
-***yarn start***
+Navegue até a pasta do frontend:
+```
+cd frontend
+```
+Instale as dependências:
+```
+yarn install
+```
+Inicie o servidor de desenvolvimento:
+```
+yarn start
+```
 
 <h2>✅ Funcionalidades</h2>
 
